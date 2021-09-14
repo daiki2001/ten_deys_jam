@@ -43,7 +43,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	LoadDivGraph("Sprite-0001.png", mapChipNum, mapChipNum, 1, 16, 16, mapChipGraph);
 
 	int mapchip[MAP_HEIGHT][MAP_WIDTH];
-	LoadCSV(mapchip, "test.csv");
+	LoadCSV(mapchip, "alphamap.csv");
 
 	// ゲームループで使う変数の宣言
 	const int mapSize = 16;
@@ -74,7 +74,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 
 		// 描画処理
-		DrawMap(mapchip, 16, mapChipGraph, true);
+		DrawMap(mapchip, 16, mapChipGraph, true, 0, 60);
 
 		//---------  ここまでにプログラムを記述  ---------//
 		// (ダブルバッファ)裏面
