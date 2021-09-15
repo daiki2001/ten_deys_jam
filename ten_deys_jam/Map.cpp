@@ -4,7 +4,7 @@
 void Map::Init()
 {
 	//マップCSVの読み込み
-	LoadCSV(map, "Resources/test.csv");
+	LoadCSV(map, "Resources/alphamap.csv");
 
 	//マップ画像の読み込み
 	LoadDivGraph("Resources/Sprite-0001.png", 14, 14, 1, 16, 16, mapGraph);

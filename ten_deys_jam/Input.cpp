@@ -4,7 +4,7 @@
 char Input::keys[256] = { 0 };
 char Input::oldkeys[256] = { 0 };
 
-void Input::Updata()
+void Input::Update()
 {
 	for (int i = 0; i < 256; i++)
 	{

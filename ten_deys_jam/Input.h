@@ -16,7 +16,7 @@ public:
 	Input& operator=(const Input& obj) = delete; //代入演算子の無効化
 
 	// 入力の更新
-	static void Updata();
+	static void Update();
 
 	// キーを押しているかどうかの判定
 	static bool IsKey(int keyCode);

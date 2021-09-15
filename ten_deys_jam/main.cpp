@@ -1,5 +1,7 @@
 #include <DxLib.h>
-#include "egudai_CSV.h"
+#include "Map.h"
+#include "Player.h"
+#include "Input.h"
 
 // ウィンドウのタイトルに表示する文字列
 const char TITLE[] = "10days-jam";
@@ -38,15 +40,14 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	SetDrawScreen(DX_SCREEN_BACK);
 
 	// 画像などのリソースデータの変数宣言と読み込み
-	const int mapChipNum = 14;
-	int mapChipGraph[mapChipNum];
-	LoadDivGraph("Sprite-0001.png", mapChipNum, mapChipNum, 1, 16, 16, mapChipGraph);
-
-	int mapchip[MAP_HEIGHT][MAP_WIDTH];
-	LoadCSV(mapchip, "alphamap.csv");
 
 	// ゲームループで使う変数の宣言
+	Map map = {};
+	map.Init();
 	const int mapSize = 16;
+
+	Player player = {};
+	player.Init(432, 16 * 38, 5, Player::RIGHT);
 
 	// 最新のキーボード情報用
 	char keys[256] = { 0 };
@@ -71,10 +72,13 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		//---------  ここからプログラムを記述  ----------//
 
 		// 更新処理
-
+		Input::Update();
+		player.Update(&map);
 
 		// 描画処理
-		DrawMap(mapchip, 16, mapChipGraph, true, 0, 60);
+		map.Draw();
+		player.Draw(0, 60);
+		DrawFormatString(0, 0, GetColor(0xff, 0xff, 0xff), "%d", player.Collision(&map));
 
 		//---------  ここまでにプログラムを記述  ---------//
 		// (ダブルバッファ)裏面

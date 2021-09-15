@@ -132,16 +132,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="egudai_CSV.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Sprite-0001.png" />
+    <Image Include="Resources\Sprite-0001.png" />
+    <Image Include="Resources\Sprite-0002.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="egudai_CSV.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="test.csv" />
+    <None Include="Resources\alphamap.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
