@@ -8,7 +8,8 @@ Player::Player() :
 	speed(0),
 	direction(Player::Direction::LEFT),
 	trunFlag(false),
-	playerGraph{}
+	playerGraph{},
+	turnEffect{}
 {
 }
 
@@ -126,6 +127,7 @@ void Player::Update(Map* map)
 		{
 			if (direction == Player::Direction::DOWN)
 			{
+				turnEffect.Init(posX, posY, direction);
 				direction = Player::Direction::UP;
 			}
 		}
@@ -138,13 +140,6 @@ void Player::Update(Map* map)
 				trunFlag = false;
 				direction++;
 				direction %= 4;
-			}
-		}
-		else
-		{
-			if (direction == Player::Direction::UP)
-			{
-				direction = Player::Direction::DOWN;
 			}
 		}
 		break;
@@ -162,6 +157,7 @@ void Player::Update(Map* map)
 		{
 			if (direction == Player::Direction::RIGHT)
 			{
+				turnEffect.Init(posX, posY, direction);
 				direction = Player::Direction::LEFT;
 			}
 		}
@@ -180,11 +176,13 @@ void Player::Update(Map* map)
 		{
 			if (direction == Player::Direction::LEFT)
 			{
+				turnEffect.Init(posX, posY, direction);
 				direction = Player::Direction::RIGHT;
 			}
 		}
 		break;
 	case 12:
+		turnEffect.Init(posX, posY, direction);
 		direction += 2;
 		direction %= 4;
 		break;
@@ -210,10 +208,35 @@ void Player::Update(Map* map)
 	}
 
 	Move();
+	turnEffect.Update();
 }
 
 void Player::Draw(int offsetX, int offsetY)
 {
+	if (trunFlag == true)
+	{
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 0xC0);
+		switch (direction)
+		{
+		case Player::Direction::UP:
+			DrawCircle(posX + offsetX + 4, posY + offsetY, 4, GetColor(0xFF, 0xFF, 0x00), true);
+			break;
+		case Player::Direction::LEFT:
+			DrawCircle(posX + offsetX, posY + offsetY + 4, 4, GetColor(0xFF, 0xFF, 0x00), true);
+			break;
+		case Player::Direction::DOWN:
+			DrawCircle(posX + offsetX + 12, posY + offsetY + 16, 4, GetColor(0xFF, 0xFF, 0x00), true);
+			break;
+		case Player::Direction::RIGHT:
+			DrawCircle(posX + offsetX + 16, posY + offsetY + 4, 4, GetColor(0xFF, 0xFF, 0x00), true);
+			break;
+		default:
+			break;
+		}
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0x80);
+	}
+
+	turnEffect.Draw(offsetX, offsetY);
 	DrawGraph(posX + offsetX, posY + offsetY, playerGraph[direction], true);
 }
 

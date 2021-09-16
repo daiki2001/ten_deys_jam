@@ -136,6 +136,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="TurnEffect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Sprite-0001.png" />
@@ -146,6 +147,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="TurnEffect.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alphamap.csv" />

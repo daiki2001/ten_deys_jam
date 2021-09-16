@@ -1,5 +1,6 @@
 #pragma once
 #include "Map.h"
+#include "TurnEffect.h"
 
 class Player
 {
@@ -18,6 +19,8 @@ public:
 	int direction;      //プレイヤーの移動方向
 	bool trunFlag;      //曲がるかどうかの判定用フラグ
 	int playerGraph[4]; //プレイヤーに使用する画像データ
+
+	TurnEffect turnEffect; //ターン時の演出
 
 public:
 	Player();
