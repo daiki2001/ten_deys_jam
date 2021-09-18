@@ -6,13 +6,13 @@
 // ↓のenumは属性別に分けた物で、何かに使っている訳では無い
 enum Status
 {
-	NONE,       //空
-	STRAIGHT,   //直進
-	CORNER,     //曲がり角
-	JUNCTION,   //交差点
-	T_JUNCTION, //T字路
-	WALL,       //壁
-	GOAL        //ゴール
+	NONE = 0,     //空
+	STRAIGHT,     //直進
+	CORNER,       //曲がり角
+	JUNCTION = 7, //交差点
+	T_JUNCTION,   //T字路
+	WALL = 12,    //壁
+	GOAL = 13     //ゴール
 };
 
 /// <summary>

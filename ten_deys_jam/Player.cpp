@@ -7,9 +7,11 @@ Player::Player() :
 	posY(0),
 	speed(0),
 	direction(Player::Direction::LEFT),
-	trunFlag(false),
+	turnFlag(false),
 	playerGraph{},
-	turnEffect{}
+	turnEffect{},
+	curveEffect{},
+	curvePoint{}
 {
 }
 
@@ -19,28 +21,33 @@ void Player::Init(int posX, int posY, int speed, int direction)
 	this->posY = posY;
 	this->speed = speed;
 	this->direction = direction;
-	this->trunFlag = false;
+	this->turnFlag = false;
 
 	LoadDivGraph("Resources/Sprite-0002.png", 4, 4, 1, 16, 16, playerGraph);
+	curvePoint.Init();
 }
 
 void Player::Update(Map* map)
 {
 	if (Input::IsKeyTrigger(KEY_INPUT_SPACE) == true)
 	{
-		trunFlag = !trunFlag;
+		turnFlag = !turnFlag;
 	}
+
+	curvePoint.Update(posX, posY, direction, turnFlag, map);
 
 	switch (Collision(map))
 	{
 	case 3:
 		if (direction == Player::Direction::LEFT)
 		{
+			curveEffect.Init(posX, posY, direction, false);
 			direction++;
 			direction %= 4;
 		}
 		else if (direction == Player::Direction::UP)
 		{
+			curveEffect.Init(posX, posY, direction, true);
 			direction--;
 
 			if (direction < 0)
@@ -54,11 +61,13 @@ void Player::Update(Map* map)
 	case 4:
 		if (direction == Player::Direction::UP)
 		{
+			curveEffect.Init(posX, posY, direction, false);
 			direction++;
 			direction %= 4;
 		}
 		else if (direction == Player::Direction::RIGHT)
 		{
+			curveEffect.Init(posX, posY, direction, true);
 			direction--;
 
 			if (direction < 0)
@@ -72,11 +81,13 @@ void Player::Update(Map* map)
 	case 5:
 		if (direction == Player::Direction::DOWN)
 		{
+			curveEffect.Init(posX, posY, direction, false);
 			direction++;
 			direction %= 4;
 		}
 		else if (direction == Player::Direction::LEFT)
 		{
+			curveEffect.Init(posX, posY, direction, true);
 			direction--;
 
 			if (direction < 0)
@@ -90,11 +101,13 @@ void Player::Update(Map* map)
 	case 6:
 		if (direction == Player::Direction::RIGHT)
 		{
+			curveEffect.Init(posX, posY, direction, false);
 			direction++;
 			direction %= 4;
 		}
 		else if (direction == Player::Direction::DOWN)
 		{
+			curveEffect.Init(posX, posY, direction, true);
 			direction--;
 
 			if (direction < 0)
@@ -105,20 +118,22 @@ void Player::Update(Map* map)
 			direction %= 4;
 		}
 		break;
-	case 7:
-		if (trunFlag == true)
+	case Status::JUNCTION:
+		if (turnFlag == true)
 		{
-			trunFlag = false;
+			curveEffect.Init(posX, posY, direction, false);
+			turnFlag = false;
 			direction++;
 			direction %= 4;
 		}
 		break;
 	case 8:
-		if (trunFlag == true)
+		if (turnFlag == true)
 		{
 			if (direction == Player::Direction::DOWN || direction == Player::Direction::RIGHT)
 			{
-				trunFlag = false;
+				curveEffect.Init(posX, posY, direction, false);
+				turnFlag = false;
 				direction++;
 				direction %= 4;
 			}
@@ -133,22 +148,24 @@ void Player::Update(Map* map)
 		}
 		break;
 	case 9:
-		if (trunFlag == true)
+		if (turnFlag == true)
 		{
 			if (direction == Player::Direction::UP || direction == Player::Direction::LEFT)
 			{
-				trunFlag = false;
+				curveEffect.Init(posX, posY, direction, false);
+				turnFlag = false;
 				direction++;
 				direction %= 4;
 			}
 		}
 		break;
 	case 10:
-		if (trunFlag == true)
+		if (turnFlag == true)
 		{
 			if (direction == Player::Direction::RIGHT || direction == Player::Direction::UP)
 			{
-				trunFlag = false;
+				curveEffect.Init(posX, posY, direction, false);
+				turnFlag = false;
 				direction++;
 				direction %= 4;
 			}
@@ -163,11 +180,12 @@ void Player::Update(Map* map)
 		}
 		break;
 	case 11:
-		if (trunFlag == true)
+		if (turnFlag == true)
 		{
 			if (direction == Player::Direction::LEFT || direction == Player::Direction::DOWN)
 			{
-				trunFlag = false;
+				curveEffect.Init(posX, posY, direction, false);
+				turnFlag = false;
 				direction++;
 				direction %= 4;
 			}
@@ -181,7 +199,7 @@ void Player::Update(Map* map)
 			}
 		}
 		break;
-	case 12:
+	case Status::WALL:
 		turnEffect.Init(posX, posY, direction);
 		direction += 2;
 		direction %= 4;
@@ -209,34 +227,14 @@ void Player::Update(Map* map)
 
 	Move();
 	turnEffect.Update();
+	curveEffect.Update();
 }
 
 void Player::Draw(int offsetX, int offsetY)
 {
-	if (trunFlag == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 0xC0);
-		switch (direction)
-		{
-		case Player::Direction::UP:
-			DrawCircle(posX + offsetX + 4, posY + offsetY, 4, GetColor(0xFF, 0xFF, 0x00), true);
-			break;
-		case Player::Direction::LEFT:
-			DrawCircle(posX + offsetX, posY + offsetY + 4, 4, GetColor(0xFF, 0xFF, 0x00), true);
-			break;
-		case Player::Direction::DOWN:
-			DrawCircle(posX + offsetX + 12, posY + offsetY + 16, 4, GetColor(0xFF, 0xFF, 0x00), true);
-			break;
-		case Player::Direction::RIGHT:
-			DrawCircle(posX + offsetX + 16, posY + offsetY + 4, 4, GetColor(0xFF, 0xFF, 0x00), true);
-			break;
-		default:
-			break;
-		}
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0x80);
-	}
-
 	turnEffect.Draw(offsetX, offsetY);
+	curveEffect.Draw(offsetX, offsetY);
+	curvePoint.Draw(offsetX, offsetY);
 	DrawGraph(posX + offsetX, posY + offsetY, playerGraph[direction], true);
 }
 

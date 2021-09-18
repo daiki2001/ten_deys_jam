@@ -131,6 +131,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CurveEffect.cpp" />
+    <ClCompile Include="CurvePoint.cpp" />
     <ClCompile Include="egudai_CSV.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
@@ -141,8 +143,11 @@
   <ItemGroup>
     <Image Include="Resources\Sprite-0001.png" />
     <Image Include="Resources\Sprite-0002.png" />
+    <Image Include="Resources\turnEffect.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CurveEffect.h" />
+    <ClInclude Include="CurvePoint.h" />
     <ClInclude Include="egudai_CSV.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Map.h" />

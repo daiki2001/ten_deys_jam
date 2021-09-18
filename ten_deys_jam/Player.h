@@ -1,6 +1,8 @@
 #pragma once
 #include "Map.h"
 #include "TurnEffect.h"
+#include "CurveEffect.h"
+#include "CurvePoint.h"
 
 class Player
 {
@@ -17,10 +19,12 @@ public:
 	int posX, posY;     //プレイヤーの座標(左上基準)
 	int speed;          //プレイヤーの移動速度
 	int direction;      //プレイヤーの移動方向
-	bool trunFlag;      //曲がるかどうかの判定用フラグ
+	bool turnFlag;      //曲がるかどうかの判定用フラグ
 	int playerGraph[4]; //プレイヤーに使用する画像データ
 
-	TurnEffect turnEffect; //ターン時の演出
+	TurnEffect turnEffect;   //ターン時の演出
+	CurveEffect curveEffect; //カーブ時の演出
+	CurvePoint curvePoint;   //どこで曲がるかの演出
 
 public:
 	Player();
