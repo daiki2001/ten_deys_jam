@@ -6,6 +6,7 @@ Player::Player() :
 	posX(0),
 	posY(0),
 	speed(0),
+	maxSpeed(0),
 	direction(Player::Direction::LEFT),
 	turnFlag(false),
 	playerGraph{},
@@ -15,11 +16,12 @@ Player::Player() :
 {
 }
 
-void Player::Init(int posX, int posY, int speed, int direction)
+void Player::Init(int posX, int posY, int maxSpeed, int direction)
 {
 	this->posX = posX;
 	this->posY = posY;
-	this->speed = speed;
+	this->speed = maxSpeed;
+	this->maxSpeed = maxSpeed;
 	this->direction = direction;
 	this->turnFlag = false;
 
@@ -32,6 +34,25 @@ void Player::Update(Map* map)
 	if (Input::IsKeyTrigger(KEY_INPUT_SPACE) == true)
 	{
 		turnFlag = !turnFlag;
+	}
+
+	if (Input::IsKey(KEY_INPUT_B) == true)
+	{
+		speed--;
+
+		if (speed < 1)
+		{
+			speed = 1;
+		}
+	}
+	else
+	{
+		speed++;
+
+		if (speed > maxSpeed)
+		{
+			speed = maxSpeed;
+		}
 	}
 
 	curvePoint.Update(posX, posY, direction, turnFlag, map);

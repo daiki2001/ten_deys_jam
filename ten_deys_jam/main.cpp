@@ -47,7 +47,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	const int mapSize = 16;
 
 	Player player = {};
-	player.Init(432, 16 * 38, 3, Player::Direction::RIGHT);
+	player.Init(432, 16 * 38, 5, Player::Direction::RIGHT);
 
 	// 最新のキーボード情報用
 	char keys[256] = { 0 };

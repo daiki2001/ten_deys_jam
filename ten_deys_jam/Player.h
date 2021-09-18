@@ -18,6 +18,7 @@ public:
 
 	int posX, posY;     //プレイヤーの座標(左上基準)
 	int speed;          //プレイヤーの移動速度
+	int maxSpeed;       //プレイヤーの最高速度
 	int direction;      //プレイヤーの移動方向
 	bool turnFlag;      //曲がるかどうかの判定用フラグ
 	int playerGraph[4]; //プレイヤーに使用する画像データ
@@ -31,7 +32,7 @@ public:
 	~Player() {};
 
 	// 初期化
-	void Init(int posX, int posY, int speed, int direction);
+	void Init(int posX, int posY, int maxSpeed, int direction);
 	// 更新
 	void Update(Map* map);
 	// 描画
