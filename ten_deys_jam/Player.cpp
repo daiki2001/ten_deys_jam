@@ -7,6 +7,7 @@ Player::Player() :
 	posY(0),
 	speed(0),
 	maxSpeed(0),
+	frame(0),
 	direction(Player::Direction::LEFT),
 	turnFlag(false),
 	playerGraph{},
@@ -22,6 +23,7 @@ void Player::Init(int posX, int posY, int maxSpeed, int direction)
 	this->posY = posY;
 	this->speed = maxSpeed;
 	this->maxSpeed = maxSpeed;
+	this->frame = 0;
 	this->direction = direction;
 	this->turnFlag = false;
 
@@ -38,20 +40,40 @@ void Player::Update(Map* map)
 
 	if (Input::IsKey(KEY_INPUT_B) == true)
 	{
-		speed--;
+		frame++;
 
-		if (speed < 1)
+		if (frame > maxSpeed * 5)
 		{
-			speed = 1;
+			frame = maxSpeed * 5;
+		}
+
+		if (frame % 5 == 0)
+		{
+			speed--;
+
+			if (speed < 1)
+			{
+				speed = 1;
+			}
 		}
 	}
 	else
 	{
-		speed++;
+		frame--;
 
-		if (speed > maxSpeed)
+		if (frame < 0)
 		{
-			speed = maxSpeed;
+			frame = 0;
+		}
+
+		if (frame % 5 == 0)
+		{
+			speed++;
+
+			if (speed > maxSpeed)
+			{
+				speed = maxSpeed;
+			}
 		}
 	}
 
