@@ -1,7 +1,7 @@
 #include <DxLib.h>
-#include "Map.h"
-#include "Player.h"
+#include "SceneMgr.h"
 #include "Input.h"
+#include "./Header/fps.h"
 
 // ウィンドウのタイトルに表示する文字列
 const char TITLE[] = "10days-jam";
@@ -24,14 +24,19 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	// タイトルを変更
 	SetMainWindowText(TITLE);
 
+#ifdef _DEBUG
+	//デバッグ用画面サイズ
+	SetGraphMode(WIN_WIDTH + 210, WIN_HEIGHT, 32);
+#else
 	// 画面サイズの最大サイズ、カラービット数を設定(モニターの解像度に合わせる)
 	SetGraphMode(WIN_WIDTH, WIN_HEIGHT, 32);
+#endif // DEBUG
 
 	// 画面サイズを設定(解像度との比率で設定)
 	SetWindowSizeExtendRate(1.0);
 
 	// 画面の背景色を設定する
-	SetBackgroundColor(0x00, 0x00, 0xFF);
+	SetBackgroundColor(0x00, 0x00, 0x00);
 
 	// DXlibの初期化
 	if (DxLib_Init() == -1) { return -1; }
@@ -42,43 +47,28 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	// 画像などのリソースデータの変数宣言と読み込み
 
 	// ゲームループで使う変数の宣言
-	Map map = {};
-	map.Init();
-	const int mapSize = 16;
-
-	Player player = {};
-	player.Init(432, 16 * 38, 5, Player::Direction::RIGHT);
-
-	// 最新のキーボード情報用
-	char keys[256] = { 0 };
-
-	// 1ループ(フレーム)前のキーボード情報
-	char oldkeys[256] = { 0 };
+	SceneMgr scenemgr;
+	scenemgr.Initialize();
 
 	// ゲームループ
 	while (1)
 	{
-		// 最新のキーボード情報だったものは1フレーム前のキーボード情報として保存
-		for (int i = 0; i < 256; i++)
-		{
-			oldkeys[i] = keys[i];
-		}
-
-		// 最新のキーボード情報を取得
-		GetHitKeyStateAll(keys);
-
 		// 画面クリア
 		ClearDrawScreen();
 		//---------  ここからプログラムを記述  ----------//
 
 		// 更新処理
 		Input::Update();
-		player.Update(&map);
+		scenemgr.Update();
 
 		// 描画処理
-		map.Draw();
-		player.Draw(0, 60);
-		DrawFormatString(0, 0, GetColor(0xff, 0xff, 0xff), "%d", player.Collision(&map));
+		scenemgr.Draw();
+
+		fps::Update();
+		fps::Draw(650, 30);
+
+		DrawFormatString(650, 50, GetColor(255, 255, 255), "mCount : %d", fps::GetFrameCount());
+		DrawFormatString(650, 70, GetColor(255, 255, 255), "frame  : %d", fps::GetFrame());
 
 		//---------  ここまでにプログラムを記述  ---------//
 		// (ダブルバッファ)裏面

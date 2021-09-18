@@ -13,30 +13,105 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="SceneManager">
+      <UniqueIdentifier>{23c32c3c-bacb-401c-bb4c-e9f0a1fc14e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SceneManager\ソースファイル">
+      <UniqueIdentifier>{2bdbae99-c76d-4140-b263-03e33eaa6ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SceneManager\ヘッダーファイル">
+      <UniqueIdentifier>{a2769e70-7ddb-4786-a3d5-d15239316d98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{62d4eb2f-8e65-466f-90ba-1d459bc8b406}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameManager">
+      <UniqueIdentifier>{a4d34b96-e4d0-42f2-b986-f0c351b1ee90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Map">
+      <UniqueIdentifier>{e5093479-51e5-4f05-9fee-f81014afb4aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Map\ヘッダーファイル">
+      <UniqueIdentifier>{6f4cfee5-9ae0-4619-af8a-798059d33886}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Map\ソースファイル">
+      <UniqueIdentifier>{6d288b8a-1f47-4df6-a3ca-9eaafb7d0bff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effect">
+      <UniqueIdentifier>{2c1d86ae-989b-4a40-b6d8-7cba181ed838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effect\ヘッダーファイル">
+      <UniqueIdentifier>{b0f20ba0-1a73-4fb4-8c81-a24cc446a638}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effect\ソースファイル">
+      <UniqueIdentifier>{746d5804-f874-45ef-b920-d7210fd75edc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="egudai_CSV.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
+    <ClCompile Include="Sound.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="TurnEffect.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="SceneMgr.cpp">
+      <Filter>SceneManager\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScene.cpp">
+      <Filter>SceneManager\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>SceneManager\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ISceneChanger.cpp">
+      <Filter>SceneManager\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>SceneManager\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameManager.cpp">
+      <Filter>Game\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Timer.cpp">
+      <Filter>Game\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Game\Map\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="egudai_CSV.cpp">
+      <Filter>Game\Map\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GoalManager.cpp">
+      <Filter>Game\Map\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GoalParticle.cpp">
+      <Filter>Effect\ソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="CurveEffect.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>Effect\ソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="CurvePoint.cpp">
+      <Filter>Effect\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnEffect.cpp">
+      <Filter>Effect\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\NY_random.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Goal.cpp">
+      <Filter>Game\Map\ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\fps.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -52,25 +127,73 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="egudai_CSV.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
+    <ClInclude Include="Sound.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="TurnEffect.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="BaseScene.h">
+      <Filter>SceneManager\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>SceneManager\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ISceneChanger.h">
+      <Filter>SceneManager\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>SceneManager\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>SceneManager\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMgr.h">
+      <Filter>SceneManager\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\GameManager.h">
+      <Filter>Game\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Timer.h">
+      <Filter>Game\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="egudai_CSV.h">
+      <Filter>Game\Map\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Game\Map\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\GoalManager.h">
+      <Filter>Game\Map\ヘッダーファイル</Filter>
     </ClInclude>
     <ClInclude Include="CurveEffect.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>Effect\ヘッダーファイル</Filter>
     </ClInclude>
     <ClInclude Include="CurvePoint.h">
+      <Filter>Effect\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\GoalParticle.h">
+      <Filter>Effect\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnEffect.h">
+      <Filter>Effect\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\NY_random.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Goal.h">
+      <Filter>Game\Map\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Particle.h">
+      <Filter>Effect\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\fps.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

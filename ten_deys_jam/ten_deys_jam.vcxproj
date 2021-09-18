@@ -131,13 +131,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseScene.cpp" />
+    <ClCompile Include="Config.cpp" />
     <ClCompile Include="CurveEffect.cpp" />
     <ClCompile Include="CurvePoint.cpp" />
     <ClCompile Include="egudai_CSV.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="ISceneChanger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="Source\fps.cpp" />
+    <ClCompile Include="Source\GameManager.cpp" />
+    <ClCompile Include="Source\Goal.cpp" />
+    <ClCompile Include="Source\GoalManager.cpp" />
+    <ClCompile Include="Source\GoalParticle.cpp" />
+    <ClCompile Include="Source\NY_random.cpp" />
+    <ClCompile Include="Source\Timer.cpp" />
     <ClCompile Include="TurnEffect.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,12 +160,28 @@
     <Image Include="Resources\turnEffect.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseScene.h" />
+    <ClInclude Include="Config.h" />
     <ClInclude Include="CurveEffect.h" />
     <ClInclude Include="CurvePoint.h" />
     <ClInclude Include="egudai_CSV.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Header\fps.h" />
+    <ClInclude Include="Header\GameManager.h" />
+    <ClInclude Include="Header\Goal.h" />
+    <ClInclude Include="Header\GoalManager.h" />
+    <ClInclude Include="Header\GoalParticle.h" />
+    <ClInclude Include="Header\NY_random.h" />
+    <ClInclude Include="Header\Particle.h" />
+    <ClInclude Include="Header\Timer.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="ISceneChanger.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="Sound.h" />
+    <ClInclude Include="Task.h" />
     <ClInclude Include="TurnEffect.h" />
   </ItemGroup>
   <ItemGroup>
