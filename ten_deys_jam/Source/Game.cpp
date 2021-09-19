@@ -1,5 +1,5 @@
 
-#include "Game.h"
+#include "./../Header/Game.h"
 #include "DxLib.h"
 
 Game::Game(ISceneChanger *changer) : BaseScene(changer) {
@@ -15,6 +15,8 @@ void Game::Initialize() {
     player.Init(432, 16 * 38, 3, 3);
     //ゲーム管理クラス初期化
     gameMgr.Init(map.map);
+    //スコア関係の初期化
+    result.Init();
 }
 
 //更新
@@ -34,6 +36,18 @@ void Game::Update() {
 #endif
     player.Update(&map);
     gameMgr.Update(player.posX, player.posY);
+
+    if (gameMgr.timer.time > 0)
+    {
+        if (gameMgr.isHit == true)
+        {
+            result.AddScore(gameMgr.gmanager.goalCount, gameMgr.level, gameMgr.timer.time);
+        }
+    }
+    else
+    {
+        result.GameSet(mSceneChanger);
+    }
 }
 
 //描画
@@ -46,6 +60,8 @@ void Game::Draw() {
     player.Draw(0, 60);
     //ゲーム管理クラス描画
     gameMgr.Draw();
+    //リザルト画面の描画
+    result.Draw(gameMgr.timer.time > 0, gameMgr.gmanager.goalCount, gameMgr.level);
 
 #ifdef _DEBUG
     //デバッグキャラ描画

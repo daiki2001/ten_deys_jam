@@ -1,13 +1,13 @@
 #pragma once
 
-#include "BaseScene.h"
-#include "ISceneChanger.h"
+#include "./../BaseScene.h"
+#include "./../ISceneChanger.h"
 
-#include "Map.h"
-#include "Player.h"
-#include "./Header/GameManager.h"
-
-#include "Input.h"
+#include "./../Map.h"
+#include "./../Player.h"
+#include "./../Header/GameManager.h"
+#include "./../Header/Result.h"
+#include "./../Input.h"
 
 
 
@@ -33,6 +33,7 @@ public:
     //ƒvƒŒƒCƒ„[
     Player player;
 
+    Result result;
 
 };
 

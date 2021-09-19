@@ -75,9 +75,6 @@
     <ClCompile Include="Source\GameManager.cpp">
       <Filter>Game\GameManager</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Game</Filter>
     </ClCompile>
@@ -114,6 +111,12 @@
     <ClCompile Include="Source\fps.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Result.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Sprite-0001.png">
@@ -123,6 +126,54 @@
       <Filter>リソース ファイル</Filter>
     </Image>
     <Image Include="Resources\turnEffect.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\+.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\20037e5891589aab.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\bonus.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\car.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\effect1.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\flag.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\GO.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\goal.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\GOALS.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\level.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\num.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\SCORE.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\sec.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\time.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\warningEffect.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resources\result.png">
       <Filter>リソース ファイル</Filter>
     </Image>
   </ItemGroup>
@@ -155,9 +206,6 @@
       <Filter>Game\GameManager</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Header\Timer.h">
@@ -195,6 +243,12 @@
     </ClInclude>
     <ClInclude Include="Header\fps.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Result.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Game.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

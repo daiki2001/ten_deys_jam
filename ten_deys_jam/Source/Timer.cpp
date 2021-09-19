@@ -1,5 +1,7 @@
 #include "./../Header/Timer.h"
 
+int Timer::numGraph[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
 void Timer::Init()
 {
 	//‘‡ŠÔ‚ğ‰Šú‰»

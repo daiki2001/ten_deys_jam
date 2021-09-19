@@ -18,7 +18,7 @@ class GameManager
 public:
 	//レベル
 	int level = 1;//レベル
-	int goalCount = 0;//ゴール数
+	//int goalCount = 0;//ゴール数
 
 	//時間
 	Timer timer;//タイマークラス

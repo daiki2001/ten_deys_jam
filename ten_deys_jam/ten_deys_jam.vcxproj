@@ -136,7 +136,6 @@
     <ClCompile Include="CurveEffect.cpp" />
     <ClCompile Include="CurvePoint.cpp" />
     <ClCompile Include="egudai_CSV.cpp" />
-    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="ISceneChanger.cpp" />
     <ClCompile Include="main.cpp" />
@@ -146,18 +145,36 @@
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Source\fps.cpp" />
+    <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\GameManager.cpp" />
     <ClCompile Include="Source\Goal.cpp" />
     <ClCompile Include="Source\GoalManager.cpp" />
     <ClCompile Include="Source\GoalParticle.cpp" />
     <ClCompile Include="Source\NY_random.cpp" />
+    <ClCompile Include="Source\Result.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
     <ClCompile Include="TurnEffect.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Resources\+.png" />
+    <Image Include="Resources\20037e5891589aab.png" />
+    <Image Include="Resources\bonus.png" />
+    <Image Include="Resources\car.png" />
+    <Image Include="Resources\effect1.png" />
+    <Image Include="Resources\flag.png" />
+    <Image Include="Resources\GO.png" />
+    <Image Include="Resources\goal.png" />
+    <Image Include="Resources\GOALS.png" />
+    <Image Include="Resources\level.png" />
+    <Image Include="Resources\num.png" />
+    <Image Include="Resources\result.png" />
+    <Image Include="Resources\SCORE.png" />
+    <Image Include="Resources\sec.png" />
     <Image Include="Resources\Sprite-0001.png" />
     <Image Include="Resources\Sprite-0002.png" />
+    <Image Include="Resources\time.png" />
     <Image Include="Resources\turnEffect.png" />
+    <Image Include="Resources\warningEffect.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseScene.h" />
@@ -165,14 +182,15 @@
     <ClInclude Include="CurveEffect.h" />
     <ClInclude Include="CurvePoint.h" />
     <ClInclude Include="egudai_CSV.h" />
-    <ClInclude Include="Game.h" />
     <ClInclude Include="Header\fps.h" />
+    <ClInclude Include="Header\Game.h" />
     <ClInclude Include="Header\GameManager.h" />
     <ClInclude Include="Header\Goal.h" />
     <ClInclude Include="Header\GoalManager.h" />
     <ClInclude Include="Header\GoalParticle.h" />
     <ClInclude Include="Header\NY_random.h" />
     <ClInclude Include="Header\Particle.h" />
+    <ClInclude Include="Header\Result.h" />
     <ClInclude Include="Header\Timer.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="ISceneChanger.h" />

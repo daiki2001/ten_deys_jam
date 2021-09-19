@@ -33,7 +33,7 @@ public:
 
 
 	//画像を使う場合のリソース
-	int numGraph[10];
+	static int numGraph[10];
 
 
 public:
@@ -65,7 +65,7 @@ public:
 	/// <param name="tnum"> 描画する数値</param>
 	/// <param name="x"> 描画する左上x座標</param>
 	/// <param name="y"> 描画する左上y座標</param>
-	void DrawNum(int tnum,int x,int y);
+	static void DrawNum(int tnum,int x,int y);
 
 	//描画
 	void Draw();
