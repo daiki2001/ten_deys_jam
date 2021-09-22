@@ -18,9 +18,6 @@ void Timer::Init()
 	//ÉäÉ\Å[ÉXì«Ç›çûÇ›
 	LoadDivGraph("Resources/num.png", 10, 10, 1, 16, 16, numGraph);
 	dotGraph = LoadGraph("Resources/dot.png");
-
-	timeFont = LoadGraph("Resources/time.png");
-	bonusFont = LoadGraph("Resources/bonus.png");
 }
 
 void Timer::Reset(int resetTime)

@@ -37,7 +37,7 @@ void GameManager::Update(float posx,float posy)
 			LevelUP();//レベル管理
 
 			//ゴールパーティクル生成
-			gParticle.Spawn(posx + 8, posy + 60 + 8);
+			gParticle.Spawn(posx + 8, posy + 8);
 			//加算時間表示演出処理
 			tx = posx, ty = posy;//座標を設定
 			timerParam = 255;//描画パラメータ初期化
@@ -57,8 +57,8 @@ void GameManager::Draw()
 	//タイマー描画
 	timer.Draw();
 	//レベル描画
-	timer.DrawNum(level, 0, 20, 16, 16);//あとで数値描画関数は別にする
-	timer.DrawNum(gmanager.goalCount, 100, 20, 16, 16);
+	timer.DrawNum(gmanager.goalCount, 780, 447, 32, 32);
+	timer.DrawNum(level, 780, 505, 32, 32);//あとで数値描画関数は別にする
 
 	//加算時間表示
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, timerParam);

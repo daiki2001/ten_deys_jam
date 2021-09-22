@@ -157,22 +157,15 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\+.png" />
-    <Image Include="Resources\20037e5891589aab.png" />
-    <Image Include="Resources\bonus.png" />
     <Image Include="Resources\car.png" />
     <Image Include="Resources\dot.png" />
     <Image Include="Resources\effect1.png" />
     <Image Include="Resources\flag.png" />
     <Image Include="Resources\GO.png" />
-    <Image Include="Resources\goal.png" />
-    <Image Include="Resources\GOALS.png" />
-    <Image Include="Resources\level.png" />
     <Image Include="Resources\num.png" />
     <Image Include="Resources\result.png" />
-    <Image Include="Resources\SCORE.png" />
     <Image Include="Resources\sec.png" />
     <Image Include="Resources\Sprite-0001.png" />
-    <Image Include="Resources\time.png" />
     <Image Include="Resources\turnEffect.png" />
     <Image Include="Resources\UI.png" />
     <Image Include="Resources\warningEffect.png" />

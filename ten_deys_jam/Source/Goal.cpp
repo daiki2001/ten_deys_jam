@@ -23,9 +23,9 @@ void Goal::Draw()
 {
 	//DrawBox(pos.first * 16, 60 + pos.second * 16, pos.first * 16 + 16, 60 + pos.second * 16 + 16, GetColor(250, 210, 60), true);
 	//エフェクト描画
-	DrawGraph((pos.first * 16) - 10, (60 + pos.second * 16) - 10, effectGraph[gnum], TRUE);
+	DrawGraph((pos.first * 16) - 10, (pos.second * 16) - 10, effectGraph[gnum], TRUE);
 	//旗描画
-	DrawExtendGraph((pos.first * 16) + 8 - 27 + 10, (60 + pos.second * 16) + 8 - 27 - 10, 
-					(pos.first * 16) + 8 + 27 + 10, (60 + pos.second * 16) + 8 + 27 - 10, flagGraph[gnum], TRUE);
+	DrawExtendGraph((pos.first * 16) + 8 - 27 + 10, (pos.second * 16) + 8 - 27 - 10, 
+					(pos.first * 16) + 8 + 27 + 10, (pos.second * 16) + 8 + 27 - 10, flagGraph[gnum], TRUE);
 	
 }

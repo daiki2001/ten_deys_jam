@@ -36,10 +36,6 @@ public:
 	static int numGraph[10];
 	static int dotGraph;
 
-	//タイマーUIフォント
-	int timeFont;
-	int bonusFont;
-
 public:
 	//コンストラクタ
 	Timer() {};

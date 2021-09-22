@@ -128,12 +128,6 @@
     <Image Include="Resources\+.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="Resources\20037e5891589aab.png">
-      <Filter>リソース ファイル</Filter>
-    </Image>
-    <Image Include="Resources\bonus.png">
-      <Filter>リソース ファイル</Filter>
-    </Image>
     <Image Include="Resources\car.png">
       <Filter>リソース ファイル</Filter>
     </Image>
@@ -146,25 +140,10 @@
     <Image Include="Resources\GO.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="Resources\goal.png">
-      <Filter>リソース ファイル</Filter>
-    </Image>
-    <Image Include="Resources\GOALS.png">
-      <Filter>リソース ファイル</Filter>
-    </Image>
-    <Image Include="Resources\level.png">
-      <Filter>リソース ファイル</Filter>
-    </Image>
     <Image Include="Resources\num.png">
       <Filter>リソース ファイル</Filter>
     </Image>
-    <Image Include="Resources\SCORE.png">
-      <Filter>リソース ファイル</Filter>
-    </Image>
     <Image Include="Resources\sec.png">
-      <Filter>リソース ファイル</Filter>
-    </Image>
-    <Image Include="Resources\time.png">
       <Filter>リソース ファイル</Filter>
     </Image>
     <Image Include="Resources\warningEffect.png">
