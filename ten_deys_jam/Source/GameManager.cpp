@@ -19,6 +19,8 @@ void GameManager::Init(int mapdata[][40])
 
 	//ゴールパーティクル
 	gParticle.Init();
+
+	uiGraph = LoadGraph("Resources/UI.png");
 }
 
 void GameManager::Update(float posx,float posy)
@@ -51,15 +53,16 @@ void GameManager::Update(float posx,float posy)
 
 void GameManager::Draw()
 {
+	DrawGraph(640, 0, uiGraph, true);
 	//タイマー描画
 	timer.Draw();
 	//レベル描画
-	timer.DrawNum(level, 0, 20);//あとで数値描画関数は別にする
-	timer.DrawNum(gmanager.goalCount, 100, 20);
+	timer.DrawNum(level, 0, 20, 16, 16);//あとで数値描画関数は別にする
+	timer.DrawNum(gmanager.goalCount, 100, 20, 16, 16);
 
 	//加算時間表示
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, timerParam);
-	timer.DrawNum(addedTime * 10, tx, ty);
+	timer.DrawNum(addedTime * 10, tx, ty, 16, 16);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 	//ゴール描画
 	gmanager.Draw();

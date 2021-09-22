@@ -1,4 +1,4 @@
-#include "Config.h"
+#include "./../Header/Config.h"
 #include "DxLib.h"
 
 Config::Config(ISceneChanger *changer) : BaseScene(changer) {

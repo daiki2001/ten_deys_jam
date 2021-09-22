@@ -1,8 +1,8 @@
 #include "DxLib.h"
-#include "Config.h"
-#include "Game.h"
-#include "Menu.h"
-#include "SceneMgr.h"
+#include "./../Header/Config.h"
+#include "./../Header/Game.h"
+#include "./../Header/Menu.h"
+#include "./../Header/SceneMgr.h"
 
 SceneMgr::SceneMgr() :
     mNextScene(eScene_None) //Ÿ‚ÌƒV[ƒ“ŠÇ—•Ï”

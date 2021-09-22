@@ -1,4 +1,4 @@
-#include "CurveEffect.h"
+#include "./../Header/CurveEffect.h"
 #include <DxLib.h>
 #include <math.h>
 

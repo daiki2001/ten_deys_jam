@@ -1,5 +1,5 @@
 #include "./../Header/GoalManager.h"
-#include "./../egudai_CSV.h"
+#include "./../Header/egudai_CSV.h"
 #include "./../Header/NY_random.h"
 
 void GoalManager::Init(int mapData[][40])

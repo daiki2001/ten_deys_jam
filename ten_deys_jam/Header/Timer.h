@@ -34,7 +34,11 @@ public:
 
 	//画像を使う場合のリソース
 	static int numGraph[10];
+	static int dotGraph;
 
+	//タイマーUIフォント
+	int timeFont;
+	int bonusFont;
 
 public:
 	//コンストラクタ
@@ -65,7 +69,8 @@ public:
 	/// <param name="tnum"> 描画する数値</param>
 	/// <param name="x"> 描画する左上x座標</param>
 	/// <param name="y"> 描画する左上y座標</param>
-	static void DrawNum(int tnum,int x,int y);
+	static void DrawNum(int tnum,int x,int y, int width, int height);
+	static void DrawFnum(float tnum, int x, int y, int width, int height);
 
 	//描画
 	void Draw();

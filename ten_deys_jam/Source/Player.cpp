@@ -1,6 +1,6 @@
-#include "Player.h"
+#include "./../Header/Player.h"
 #include <DxLib.h>
-#include "Input.h"
+#include "./../Header/Input.h"
 
 Player::Player() :
 	posX(0),
@@ -13,7 +13,9 @@ Player::Player() :
 	playerGraph{},
 	turnEffect{},
 	curveEffect{},
-	curvePoint{}
+	curvePoint{},
+	playerSE{},
+	turnSE{}
 {
 }
 
@@ -27,12 +29,16 @@ void Player::Init(int posX, int posY, int maxSpeed, int direction)
 	this->direction = direction;
 	this->turnFlag = false;
 
-	LoadDivGraph("Resources/Sprite-0002.png", 4, 4, 1, 16, 16, playerGraph);
+	LoadDivGraph("Resources/car.png", 4, 4, 1, 16, 16, playerGraph);
 	curvePoint.Init();
+
+	playerSE.Init("Resources/se10.mp3", 0x40);
+	turnSE.Init("Resources/se10.mp3", 0x80);
 }
 
 void Player::Update(Map* map)
 {
+	//playerSE.Play(DX_PLAYTYPE_LOOP);
 	if (Input::IsKeyTrigger(KEY_INPUT_SPACE) == true)
 	{
 		turnFlag = !turnFlag;
@@ -100,6 +106,7 @@ void Player::Update(Map* map)
 
 			direction %= 4;
 		}
+		turnSE.Play(DX_PLAYTYPE_BACK);
 		break;
 	case 4:
 		if (direction == Player::Direction::UP)
@@ -120,6 +127,7 @@ void Player::Update(Map* map)
 
 			direction %= 4;
 		}
+		turnSE.Play(DX_PLAYTYPE_BACK);
 		break;
 	case 5:
 		if (direction == Player::Direction::DOWN)
@@ -140,6 +148,7 @@ void Player::Update(Map* map)
 
 			direction %= 4;
 		}
+		turnSE.Play(DX_PLAYTYPE_BACK);
 		break;
 	case 6:
 		if (direction == Player::Direction::RIGHT)
@@ -160,6 +169,7 @@ void Player::Update(Map* map)
 
 			direction %= 4;
 		}
+		turnSE.Play(DX_PLAYTYPE_BACK);
 		break;
 	case Status::JUNCTION:
 		if (turnFlag == true)
@@ -168,6 +178,8 @@ void Player::Update(Map* map)
 			turnFlag = false;
 			direction++;
 			direction %= 4;
+
+			turnSE.Play(DX_PLAYTYPE_BACK);
 		}
 		break;
 	case 8:
@@ -179,6 +191,8 @@ void Player::Update(Map* map)
 				turnFlag = false;
 				direction++;
 				direction %= 4;
+
+				turnSE.Play(DX_PLAYTYPE_BACK);
 			}
 		}
 		else
@@ -187,6 +201,8 @@ void Player::Update(Map* map)
 			{
 				turnEffect.Init(posX, posY, direction);
 				direction = Player::Direction::UP;
+
+				turnSE.Play(DX_PLAYTYPE_BACK);
 			}
 		}
 		break;
@@ -199,6 +215,8 @@ void Player::Update(Map* map)
 				turnFlag = false;
 				direction++;
 				direction %= 4;
+
+				turnSE.Play(DX_PLAYTYPE_BACK);
 			}
 		}
 		break;
@@ -211,6 +229,8 @@ void Player::Update(Map* map)
 				turnFlag = false;
 				direction++;
 				direction %= 4;
+
+				turnSE.Play(DX_PLAYTYPE_BACK);
 			}
 		}
 		else
@@ -219,6 +239,8 @@ void Player::Update(Map* map)
 			{
 				turnEffect.Init(posX, posY, direction);
 				direction = Player::Direction::LEFT;
+
+				turnSE.Play(DX_PLAYTYPE_BACK);
 			}
 		}
 		break;
@@ -231,6 +253,8 @@ void Player::Update(Map* map)
 				turnFlag = false;
 				direction++;
 				direction %= 4;
+
+				turnSE.Play(DX_PLAYTYPE_BACK);
 			}
 		}
 		else
@@ -239,6 +263,8 @@ void Player::Update(Map* map)
 			{
 				turnEffect.Init(posX, posY, direction);
 				direction = Player::Direction::RIGHT;
+
+				turnSE.Play(DX_PLAYTYPE_BACK);
 			}
 		}
 		break;
@@ -246,6 +272,8 @@ void Player::Update(Map* map)
 		turnEffect.Init(posX, posY, direction);
 		direction += 2;
 		direction %= 4;
+
+		turnSE.Play(DX_PLAYTYPE_BACK);
 		break;
 	default:
 		break;

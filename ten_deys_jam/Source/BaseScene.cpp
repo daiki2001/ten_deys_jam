@@ -1,4 +1,4 @@
-#include "BaseScene.h"
+#include "./../Header/BaseScene.h"
 #include "DxLib.h"
 
 BaseScene::BaseScene(ISceneChanger *changer) :

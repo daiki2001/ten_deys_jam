@@ -1,15 +1,21 @@
 #pragma once
-#include "./../ISceneChanger.h"
+#include "ISceneChanger.h"
+#include "Sound.h"
 
 class Result
 {
 public:
 	int score;               //スコア
 	static int highScore[3]; //ハイスコア
-	int scoreGraph;          //「Score:」の文字画像データ
+	//int scoreGraph;          //「Score:」の文字画像データ
 	bool isGameSet;          //ゲームが終了したかどうか
 	int resultGraph[2];      //リザルト画面の画像データ
 	int sceneSelect;         //リザルト画面の画像データの要素番号
+	int animation;           //リザルト画面の数字の演出
+
+	Sound scoreSE;  //スコア表示のSE
+	Sound selectSE; //選択時のSE
+	Sound decideSE; //決定時のSE
 
 	Result(); //コンストラクタ
 	~Result() {};

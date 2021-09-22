@@ -1,6 +1,6 @@
-#include "CurvePoint.h"
+#include "./../Header/CurvePoint.h"
 #include <DxLib.h>
-#include "Player.h"
+#include "./../Header/Player.h"
 
 CurvePoint::CurvePoint() :
 	posX(0),

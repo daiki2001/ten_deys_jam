@@ -1,4 +1,4 @@
-#include "TurnEffect.h"
+#include "./../Header/TurnEffect.h"
 #include <DxLib.h>
 #include <math.h>
 

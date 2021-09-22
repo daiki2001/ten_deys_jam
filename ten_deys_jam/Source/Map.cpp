@@ -1,4 +1,4 @@
-#include "Map.h"
+#include "./../Header/Map.h"
 #include "DxLib.h"
 
 void Map::Init()
@@ -14,5 +14,5 @@ void Map::Init()
 void Map::Draw()
 {
 	//マップ描画関数を使用して描画
-	DrawMap(map, 16, mapGraph, true, 0, 60);
+	DrawMap(map, 16, mapGraph, true);
 }

@@ -1,4 +1,4 @@
-#include "egudai_CSV.h"
+#include "./../Header/egudai_CSV.h"
 #include <DxLib.h>
 #include <stdio.h>
 

@@ -12,7 +12,7 @@ Game::Game(ISceneChanger *changer) : BaseScene(changer) {
 //初期化
 void Game::Initialize() {
     //プレイヤー初期化
-    player.Init(432, 16 * 38, 3, 3);
+    player.Init(432, 16 * 38, 5, 3);
     //ゲーム管理クラス初期化
     gameMgr.Init(map.map);
     //スコア関係の初期化
@@ -57,7 +57,7 @@ void Game::Draw() {
     //マップ描画
     map.Draw();
     //プレイヤー描画
-    player.Draw(0, 60);
+    player.Draw();
     //ゲーム管理クラス描画
     gameMgr.Draw();
     //リザルト画面の描画

@@ -1,4 +1,4 @@
-#include "Input.h"
+#include "./../Header/Input.h"
 #include <DxLib.h>
 
 char Input::keys[256] = { 0 };

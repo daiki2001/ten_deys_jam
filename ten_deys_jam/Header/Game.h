@@ -1,13 +1,13 @@
 #pragma once
 
-#include "./../BaseScene.h"
-#include "./../ISceneChanger.h"
+#include "./../Header/BaseScene.h"
+#include "./../Header/ISceneChanger.h"
 
-#include "./../Map.h"
-#include "./../Player.h"
+#include "./../Header/Map.h"
+#include "./../Header/Player.h"
 #include "./../Header/GameManager.h"
 #include "./../Header/Result.h"
-#include "./../Input.h"
+#include "./../Header/Input.h"
 
 
 

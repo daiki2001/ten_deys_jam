@@ -38,6 +38,8 @@ public:
 	//ゴールパーティクル
 	GoalParticle gParticle;
 
+	int uiGraph;
+
 	//コンストラクタ
 	GameManager() {};
 	~GameManager() {};

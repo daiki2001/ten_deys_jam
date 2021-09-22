@@ -131,35 +131,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BaseScene.cpp" />
-    <ClCompile Include="Config.cpp" />
-    <ClCompile Include="CurveEffect.cpp" />
-    <ClCompile Include="CurvePoint.cpp" />
-    <ClCompile Include="egudai_CSV.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="ISceneChanger.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Map.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="SceneMgr.cpp" />
-    <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="Source\BaseScene.cpp" />
+    <ClCompile Include="Source\Config.cpp" />
+    <ClCompile Include="Source\CurveEffect.cpp" />
+    <ClCompile Include="Source\CurvePoint.cpp" />
+    <ClCompile Include="Source\egudai_CSV.cpp" />
     <ClCompile Include="Source\fps.cpp" />
     <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\GameManager.cpp" />
     <ClCompile Include="Source\Goal.cpp" />
     <ClCompile Include="Source\GoalManager.cpp" />
     <ClCompile Include="Source\GoalParticle.cpp" />
+    <ClCompile Include="Source\Input.cpp" />
+    <ClCompile Include="Source\ISceneChanger.cpp" />
+    <ClCompile Include="Source\Map.cpp" />
+    <ClCompile Include="Source\Menu.cpp" />
     <ClCompile Include="Source\NY_random.cpp" />
+    <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\Result.cpp" />
+    <ClCompile Include="Source\SceneMgr.cpp" />
+    <ClCompile Include="Source\Sound.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
-    <ClCompile Include="TurnEffect.cpp" />
+    <ClCompile Include="Source\TurnEffect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\+.png" />
     <Image Include="Resources\20037e5891589aab.png" />
     <Image Include="Resources\bonus.png" />
     <Image Include="Resources\car.png" />
+    <Image Include="Resources\dot.png" />
     <Image Include="Resources\effect1.png" />
     <Image Include="Resources\flag.png" />
     <Image Include="Resources\GO.png" />
@@ -171,36 +172,36 @@
     <Image Include="Resources\SCORE.png" />
     <Image Include="Resources\sec.png" />
     <Image Include="Resources\Sprite-0001.png" />
-    <Image Include="Resources\Sprite-0002.png" />
     <Image Include="Resources\time.png" />
     <Image Include="Resources\turnEffect.png" />
+    <Image Include="Resources\UI.png" />
     <Image Include="Resources\warningEffect.png" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseScene.h" />
-    <ClInclude Include="Config.h" />
-    <ClInclude Include="CurveEffect.h" />
-    <ClInclude Include="CurvePoint.h" />
-    <ClInclude Include="egudai_CSV.h" />
+    <ClInclude Include="Header\BaseScene.h" />
+    <ClInclude Include="Header\Config.h" />
+    <ClInclude Include="Header\CurveEffect.h" />
+    <ClInclude Include="Header\CurvePoint.h" />
+    <ClInclude Include="Header\egudai_CSV.h" />
     <ClInclude Include="Header\fps.h" />
     <ClInclude Include="Header\Game.h" />
     <ClInclude Include="Header\GameManager.h" />
     <ClInclude Include="Header\Goal.h" />
     <ClInclude Include="Header\GoalManager.h" />
     <ClInclude Include="Header\GoalParticle.h" />
+    <ClInclude Include="Header\Input.h" />
+    <ClInclude Include="Header\ISceneChanger.h" />
+    <ClInclude Include="Header\Map.h" />
+    <ClInclude Include="Header\Menu.h" />
     <ClInclude Include="Header\NY_random.h" />
     <ClInclude Include="Header\Particle.h" />
+    <ClInclude Include="Header\Player.h" />
     <ClInclude Include="Header\Result.h" />
+    <ClInclude Include="Header\SceneMgr.h" />
+    <ClInclude Include="Header\Sound.h" />
+    <ClInclude Include="Header\Task.h" />
     <ClInclude Include="Header\Timer.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="ISceneChanger.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="SceneMgr.h" />
-    <ClInclude Include="Sound.h" />
-    <ClInclude Include="Task.h" />
-    <ClInclude Include="TurnEffect.h" />
+    <ClInclude Include="Header\TurnEffect.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alphamap.csv" />

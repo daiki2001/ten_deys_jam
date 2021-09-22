@@ -1,16 +1,16 @@
 #include <DxLib.h>
-#include "SceneMgr.h"
-#include "Input.h"
+#include "./Header/SceneMgr.h"
+#include "./Header/Input.h"
 #include "./Header/fps.h"
 
 // ウィンドウのタイトルに表示する文字列
-const char TITLE[] = "10days-jam";
+const char TITLE[] = "201_TurnLeft";
 
 // ウィンドウ横幅
-const int WIN_WIDTH = 640;
+const int WIN_WIDTH = 640 + 250;
 
 // ウィンドウ縦幅
-const int WIN_HEIGHT = 700;
+const int WIN_HEIGHT = 640;
 
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
 {
@@ -65,10 +65,10 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		scenemgr.Draw();
 
 		fps::Update();
-		fps::Draw(650, 30);
+		fps::Draw(WIN_WIDTH + 10, 30);
 
-		DrawFormatString(650, 50, GetColor(255, 255, 255), "mCount : %d", fps::GetFrameCount());
-		DrawFormatString(650, 70, GetColor(255, 255, 255), "frame  : %d", fps::GetFrame());
+		DrawFormatString(WIN_WIDTH + 10, 50, GetColor(255, 255, 255), "mCount : %d", fps::GetFrameCount());
+		DrawFormatString(WIN_WIDTH + 10, 70, GetColor(255, 255, 255), "frame  : %d", fps::GetFrame());
 
 		//---------  ここまでにプログラムを記述  ---------//
 		// (ダブルバッファ)裏面

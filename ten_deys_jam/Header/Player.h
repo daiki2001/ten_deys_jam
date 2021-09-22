@@ -3,6 +3,7 @@
 #include "TurnEffect.h"
 #include "CurveEffect.h"
 #include "CurvePoint.h"
+#include "Sound.h"
 
 class Player
 {
@@ -27,6 +28,9 @@ public:
 	TurnEffect turnEffect;   //ターン時の演出
 	CurveEffect curveEffect; //カーブ時の演出
 	CurvePoint curvePoint;   //どこで曲がるかの演出
+
+	Sound playerSE; //エンジン音
+	Sound turnSE;   //曲がる時と反転する時の音
 
 public:
 	Player();
